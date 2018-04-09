@@ -2,7 +2,7 @@
 
 namespace DotNetAPIControllers.Models
 {
-    public class IRepository
+    public interface IRepository
     {
         IEnumerable<Reservation> Reservations { get; }
         Reservation this[int id] { get; }
