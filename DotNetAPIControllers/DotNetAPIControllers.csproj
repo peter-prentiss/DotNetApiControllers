@@ -19,8 +19,10 @@
 
   <ItemGroup>
     <Content Remove="bower.json" />
+    <Content Remove="project.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bower.json" />
+    <None Include="project.json" />
   </ItemGroup>
 </Project>
