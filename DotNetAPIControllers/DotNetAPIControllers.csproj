@@ -26,4 +26,7 @@
     <None Include="bower.json" />
     <None Include="project.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\Startup.cs" />
+  </ItemGroup>
 </Project>
