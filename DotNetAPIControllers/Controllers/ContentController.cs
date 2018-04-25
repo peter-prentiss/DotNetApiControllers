@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Mvc;
+using DotNetAPIControllers.Models;
 
 namespace DotNetAPIControllers.Controllers
 {
+    [Route("api/[controller")]
     public class ContentController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            return View();
+        [HttpGet("string")]
+        public string GetString() => "This is a string response";
+
+        [HttpGet("object")]
+        public Reservation GetObject() => new Reservation {
+            ReservationID = 100,
+            ClientName = "Joe",
+            Location = "Board Room"
         }
     }
 }
