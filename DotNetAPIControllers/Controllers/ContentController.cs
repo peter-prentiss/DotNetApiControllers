@@ -10,6 +10,7 @@ namespace DotNetAPIControllers.Controllers
         public string GetString() => "This is a string response";
 
         [HttpGet("object")]
+        [Produces("application/json")]
         public Reservation GetObject() => new Reservation {
             ReservationID = 100,
             ClientName = "Joe",
