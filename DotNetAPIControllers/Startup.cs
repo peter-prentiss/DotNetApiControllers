@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using DotNetAPIControllers.Models;
 using Microsoft.Net.Http.Headers;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace DotNetAPIControllers
 {
@@ -14,7 +15,9 @@ namespace DotNetAPIControllers
                     .AddXmlDataContractSerializerFormatters()
                     .AddMvcOptions(opts => {
                         opts.FormatterMappings.SetMediaTypeMappingForFormat("xml",
-                        new MediaTypeHeaderValue("application/xml"));
+                            new MediaTypeHeaderValue("application/xml"));
+                        opts.RespectBrowserAcceptHeader = true;
+                        opts.ReturnHttpNotAcceptable = true;
                     });;
         }
         public void Configure(IApplicationBuilder app)
