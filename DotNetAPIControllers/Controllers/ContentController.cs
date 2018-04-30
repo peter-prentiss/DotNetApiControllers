@@ -11,7 +11,7 @@ namespace DotNetAPIControllers.Controllers
 
         [HttpGet("object/{format?}")]
         [FormatFilter]
-        [Produces("application/json", "application/xml")]
+        //[Produces("application/json", "application/xml")]
         public Reservation GetObject() => new Reservation {
             ReservationID = 100,
             ClientName = "Joe",
